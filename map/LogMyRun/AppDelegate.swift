@@ -15,13 +15,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         let navigationController = window!.rootViewController as! UINavigationController
-        let controller = navigationController.topViewController as! IBNewRunViewController
+        let controller = navigationController.topViewController as! FBViewController
         controller.managedObjectContext = managedObjectContext
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://httpbin.org/")!)
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        
+        let params = ["username":"username", "password":"password"] as Dictionary<String, String>
+        
+        request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(params, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task2 = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            print("Response: \(response)")})
+        
+        task2.resume()
         
         return true
     }
 
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication:  sourceApplication, annotation: annotation)
+    }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

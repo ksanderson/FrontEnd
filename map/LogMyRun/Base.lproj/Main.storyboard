@@ -19,53 +19,64 @@
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bra-Rh-ExX">
                                 <rect key="frame" x="20" y="145" width="560" height="309"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAP-38-cxo">
-                                        <rect key="frame" x="10" y="209" width="540" height="90"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="1" green="0.31327859279999998" blue="0.32860185920000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <state key="normal" title="Badges">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="qgJ-VX-uJp" kind="show" id="0Ck-ka-tKO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzK-Su-D21">
-                                        <rect key="frame" x="10" y="109" width="540" height="90"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.70196078429999997" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <state key="normal" title="Runs History">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="UAP-38-cxo" firstAttribute="top" secondItem="AzK-Su-D21" secondAttribute="bottom" constant="10" id="ELb-eP-Mvi"/>
-                                    <constraint firstAttribute="trailing" secondItem="AzK-Su-D21" secondAttribute="trailing" constant="10" id="Ht2-Ye-baI"/>
-                                    <constraint firstItem="UAP-38-cxo" firstAttribute="leading" secondItem="Bra-Rh-ExX" secondAttribute="leading" constant="10" id="Lfj-V6-02f"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="309" id="SX6-J0-8oE"/>
-                                    <constraint firstAttribute="trailing" secondItem="UAP-38-cxo" secondAttribute="trailing" constant="10" id="Xb6-MH-R58"/>
-                                    <constraint firstItem="AzK-Su-D21" firstAttribute="leading" secondItem="Bra-Rh-ExX" secondAttribute="leading" constant="10" id="Ywo-p3-mBE"/>
-                                    <constraint firstAttribute="bottom" secondItem="UAP-38-cxo" secondAttribute="bottom" constant="10" id="gi8-Pl-kqk"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7H-tf-pJC">
-                                <rect key="frame" x="20" y="480" width="100" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZpV-I4-0Qd">
+                                <rect key="frame" x="0.0" y="501" width="600" height="109"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7cq-Va-ZRG">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="109"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gps-60-RBR">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="109"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1x-CX-EaP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="109"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7H-tf-pJC">
+                                                                <rect key="frame" x="131" y="0.0" width="100" height="100"/>
+                                                                <animations/>
+                                                                <color key="backgroundColor" red="0.91494342449999999" green="0.92467686520000003" blue="0.90520998379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <state key="normal" title="Map">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzK-Su-D21">
+                                                                <rect key="frame" x="8" y="5" width="98" height="90"/>
+                                                                <animations/>
+                                                                <color key="backgroundColor" red="0.91494342449999999" green="0.92467686520000003" blue="0.90520998379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <state key="normal" title="Friends">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAP-38-cxo">
+                                                                <rect key="frame" x="426" y="3" width="99" height="90"/>
+                                                                <animations/>
+                                                                <color key="backgroundColor" red="0.91494342449999999" green="0.92467686520000003" blue="0.90520998379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <state key="normal" title="Badges">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                        <animations/>
+                                                        <color key="backgroundColor" red="0.91494342449710664" green="0.9246768651832461" blue="0.90520998381096729" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.086274509799999996" green="0.78823529410000004" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="Map">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="d2c-Fa-C2K" kind="show" id="CWh-y0-9z6"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.87450980389999999" green="0.92549019610000005" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1187" y="1143"/>
+            <point key="canvasLocation" x="1161" y="1599"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H52-DO-K6i">
@@ -94,12 +105,115 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="d2c-Fa-C2K" kind="relationship" relationship="rootViewController" id="qzX-TV-epZ"/>
+                        <segue destination="qaL-Be-jq4" kind="relationship" relationship="rootViewController" id="B33-BY-JBr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7U7-7t-B8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893" y="341"/>
+            <point key="canvasLocation" x="799" y="-603"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jKF-jO-gjU">
+            <objects>
+                <viewController id="qaL-Be-jq4" customClass="FBViewController" customModule="LogMyRun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rMt-wC-WUm"/>
+                        <viewControllerLayoutGuide type="bottom" id="8zH-ZS-fQo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DtY-p4-puP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bloomsday App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zg-vv-MVr">
+                                <rect key="frame" x="-128" y="65" width="600" height="55"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q2-V0-3hp">
+                                <rect key="frame" x="49" y="340" width="232" height="30"/>
+                                <animations/>
+                                <state key="normal" title="continue as a guest">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mB4-Q6-wM3" kind="presentation" id="m8X-JB-Uoq"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-3o-ejU" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="62" y="471" width="200" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.59607843137254901" green="0.33333333333333331" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mjG-ax-kVV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJt-OY-ov1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605" y="111"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="QK9-Dd-Bjo">
+            <objects>
+                <viewController id="mB4-Q6-wM3" customClass="IBHomeViewController" customModule="LogMyRun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2ux-ZZ-YtX"/>
+                        <viewControllerLayoutGuide type="bottom" id="FaX-Bf-FAj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fct-S4-xpl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MxC-ap-7oS">
+                                <rect key="frame" x="-34" y="502" width="636" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bloomsday App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qq-Tw-kYU">
+                                <rect key="frame" x="-138" y="148" width="600" height="55"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twb-RR-IEw">
+                                <rect key="frame" x="0.0" y="503" width="600" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nis-Qy-ffd">
+                                        <rect key="frame" x="98" y="18" width="80" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Friends"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2A-kF-wLW">
+                                        <rect key="frame" x="219" y="18" width="100" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Settings"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPL-Ds-6NN">
+                                        <rect key="frame" x="14" y="18" width="30" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Map"/>
+                                        <connections>
+                                            <segue destination="d2c-Fa-C2K" kind="show" id="ibE-l3-cdT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.91670075261780104" green="0.91670075261780104" blue="0.91670075261780104" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.66666666666666663" green="0.4237874315070852" blue="0.63285634094274101" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zoR-j1-tOo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kWN-jt-oTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1285" y="96"/>
         </scene>
         <!--New Run View Controller-->
         <scene sceneID="Toy-yV-fR0">
@@ -243,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zK-r4-pP1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957" y="429"/>
+            <point key="canvasLocation" x="1968" y="449"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="lXj-jk-fKR">
@@ -297,7 +411,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8E-sz-QEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="1215"/>
+            <point key="canvasLocation" x="1875" y="1551"/>
         </scene>
         <!--Run Detail View Controller-->
         <scene sceneID="OKy-ug-USy">
@@ -595,10 +709,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKP-Mc-8Ns" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2827" y="1238"/>
+            <point key="canvasLocation" x="2711" y="1582"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="qzX-TV-epZ"/>
-    </inferredMetricsTieBreakers>
 </document>

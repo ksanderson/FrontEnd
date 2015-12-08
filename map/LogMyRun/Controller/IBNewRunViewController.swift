@@ -24,9 +24,13 @@ class IBNewRunViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var level1: MKOverlayLevel!
+    
     var seconds = 0.0
     var distance = 0.0
     
+    var runners = 0;
+    var currentRunner = 0;
     lazy var locationManager : CLLocationManager = {
         var _locationManager = CLLocationManager()
         _locationManager.delegate = self
@@ -96,7 +100,6 @@ class IBNewRunViewController: UIViewController {
         startLocation()
     }
     
-    
     @IBAction func stopAction(sender: UIButton)
     {
         //switchButtonsWithStartState(true)
@@ -157,8 +160,6 @@ class IBNewRunViewController: UIViewController {
         switchButtonsWithStartState(true)
         mapView.removeOverlays(mapView.overlays)
         
-
-        
     }
     func eachSecond(timer : NSTimer) {
         seconds++
@@ -173,14 +174,12 @@ class IBNewRunViewController: UIViewController {
         let paceQuantity = HKQuantity(unit: paceUnit, doubleValue: seconds/distance)
         paceLabel.text = paceQuantity.description
         
-        
     }
     
      // MARK: - Start log the run
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations as [CLLocation] {
             let howRecent = location.timestamp.timeIntervalSinceNow
-            
             
             if abs(howRecent) < 10 && location.horizontalAccuracy < 20 {
                 //Update distance
@@ -192,9 +191,24 @@ class IBNewRunViewController: UIViewController {
                     coords.append(self.locations.last!.coordinate)
                     coords.append(location.coordinate)
                     
+                    //var coords2 = [CLLocationCoordinate2D]()
+                    var test = self.locations.last!.coordinate;
+                    test.latitude += 0.0005;
+                    test.longitude += 0.0005;
+                    
+                   // var test2 = location.coordinate;
+                    //test2.latitude += 0.0005;
+                   // test2.longitude += 0.0005;
+                    
+                   // coords2.append(test)
+                   // coords2.append(test2)
+                    
                     let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500)
                     mapView.setRegion(region, animated: true)
                     mapView.addOverlay(MKPolyline(coordinates: &coords, count: coords.count))
+                    
+                  //  mapView.addOverlay(MKPolyline(coordinates: &coords2, count: coords2.count))
+                    
                 }
                 
                 //save location
@@ -232,9 +246,6 @@ class IBNewRunViewController: UIViewController {
         } catch {
             print("Could not save the run!")
         }
-        
-        
-        
     }
     
     // MARK: - Navigation
@@ -247,8 +258,6 @@ class IBNewRunViewController: UIViewController {
             detailViewController.run = run
         }
     }
-
-
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -260,9 +269,21 @@ extension IBNewRunViewController : MKMapViewDelegate {
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
 
         let polyline = overlay as! MKPolyline
+        
         let renderer = MKPolylineRenderer(polyline: polyline)
-        renderer.strokeColor = UIColor.orangeColor()
+        if currentRunner == 0 {
+            renderer.strokeColor = UIColor.greenColor()
+        }
+        else {
+            renderer.strokeColor = UIColor.redColor()
+        }
         renderer.lineWidth = 3
+        if currentRunner < runners {
+            currentRunner++;
+        }
+        else {
+            currentRunner = 0;
+        }
         return renderer
     }
 }

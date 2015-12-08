@@ -120,6 +120,7 @@ class IBRunDetailViewController: UIViewController {
         
         let polyline = overlay as! IBMulticolorPolylineSegment
         let renderer = MKPolylineRenderer(polyline: polyline)
+        
         renderer.strokeColor = polyline.color
         renderer.lineWidth = 3
         return renderer
